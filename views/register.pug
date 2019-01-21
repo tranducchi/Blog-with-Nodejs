@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h3.text-center Register
+    .col-lg-8.offset-lg-2
+        form(method='post', action='/users/register')
+            .form-group
+                label(for='exampleInputEmail1') Email address
+                input.form-control(type='email', placeholder='Enter email', name='email')
+                small.form-text.text-muted We'll never share your email with anyone else.
+            .form-group
+                label(for='exampleInputPassword1') Password
+                input.form-control(type='password', placeholder='Password', name='pass')
+            .form-group.text-center
+                button.btn.btn-success(type='submit') Register

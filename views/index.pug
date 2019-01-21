@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+ 
+    h3.text-center.mb-3  List Artilce
+    .col-lg-10.offset-lg-1
+    each val in article
+      .card.mb-3
+        .card-body
+          h4
+            a.card-title(href='/articles/'+ val._id) #{val.title}
+          p.card-text #{val.description}
+          a.btn.btn-primary.btn-sm(href='/articles/' + val._id ) More then >>
+  
+    include _paginate

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    each val in article
+        nav(aria-label='breadcrumb')
+            ol.breadcrumb
+                li.breadcrumb-item
+                    a(href='/') Home
+                li.breadcrumb-item.active(aria-current='page') #{val.title}
+            h1.mb-3 #{val.title}
+            p #{val.description}
+            a.btn.btn-danger.text-white.mr-2(href='/articles/delete/'+ val._id) Delete
+            a.btn.btn-info.text-white(href='/articles/edit/'+ val._id) Edit

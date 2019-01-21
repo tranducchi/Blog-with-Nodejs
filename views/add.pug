@@ -1,0 +1,14 @@
+extends layout
+block content
+    
+    .col-lg-8.offset-lg-2
+        h3.text-center Add Article
+        form(method='post', action='/articles/add')
+            .form-group
+                label Title
+                input.form-control(name='title', placeholder='Please enter title')
+            .form-group
+                label Description
+                textarea.form-control(name='description', placeholder='Describe for article', rows="5")
+            .form-group.text-center
+                input.btn.btn-info(type='submit', value='Add Article')

@@ -1,0 +1,16 @@
+extends layout
+block content
+    
+    .col-lg-8.offset-lg-2
+        h3.text-center Update Article
+        
+        each val in article
+            form(method='post', action='/articles/update/'+ val._id)
+                .form-group
+                    label Title
+                    input.form-control(name='title', placeholder='Please enter title', value=val.title)
+                .form-group
+                    label Description
+                    textarea.form-control(name='description', placeholder='Describe for article', rows="5") #{val.description}
+                .form-group.text-center
+                    input.btn.btn-info(type='submit', value='Update Article')
